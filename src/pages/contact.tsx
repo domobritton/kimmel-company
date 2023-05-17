@@ -44,7 +44,16 @@ export const Contact = ({ data }: Props): JSX.Element => {
           </HeroContent>
         </Hero>
       )}
-      <Section styles='padding-bottom: 0; @media (min-width: 980px) { padding-bottom: 0;}'>
+      <Section
+        styles='
+      padding-bottom: 25px; 
+      @media (min-width: 768px) { 
+        padding-bottom: 0;
+      }
+      @media (min-width: 980px) { 
+        padding-bottom: 0;
+        }'
+      >
         <Container>
           <SectionTitle
             css={css`
@@ -87,7 +96,7 @@ export const Contact = ({ data }: Props): JSX.Element => {
             <FontAwesomeIcon
               icon={faPerson}
               css={css`
-                margin: 0 12px 0 6px;
+                margin: 0 12px 0 4px;
                 color: #28678b;
               `}
             />
@@ -97,7 +106,7 @@ export const Contact = ({ data }: Props): JSX.Element => {
             <FontAwesomeIcon
               icon={faPerson}
               css={css`
-                margin: 0 12px 0 6px;
+                margin: 0 12px 0 4px;
                 color: #28678b;
               `}
             />
@@ -107,7 +116,7 @@ export const Contact = ({ data }: Props): JSX.Element => {
             <FontAwesomeIcon
               icon={faPerson}
               css={css`
-                margin: 0 12px 0 6px;
+                margin: 0 12px 0 4px;
                 color: #28678b;
               `}
             />
@@ -123,6 +132,7 @@ export const Contact = ({ data }: Props): JSX.Element => {
             alt='Marin coast'
             css={css`
               max-height: 500px;
+              width: 100%;
             `}
           />
         )}
