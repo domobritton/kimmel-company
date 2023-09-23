@@ -111,8 +111,8 @@ export const TeamMember = ({
         {title && <Title>{title}</Title>}
         {paragraphs.map(({ id, copy, link }) => {
           return (
-            <Fragment>
-              <p key={id}>
+            <Fragment key={`${name}-${id}`}>
+              <p>
                 {copy}
                 {link && (
                   <span>

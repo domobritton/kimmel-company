@@ -51,6 +51,13 @@ const FlexColumn = styled.div`
   }
 `;
 
+const ImageContainer = styled.div`
+  > div {
+    max-height: 500px;
+    width: 100%;
+  }
+`;
+
 const Name = styled.div`
   color: #3a3a3a;
   font-size: 1.5em;
@@ -71,6 +78,7 @@ interface ImageData {
   lindaCurtis: IGatsbyImageData;
   landonCarter: IGatsbyImageData;
   lauraGates: IGatsbyImageData;
+  whitneyGlassberg: IGatsbyImageData;
   ctaImage: IGatsbyImageData;
 }
 
@@ -89,6 +97,7 @@ export const Team = ({ data }: Props): JSX.Element => {
   const linda = getImage(data.lindaCurtis);
   const landon = getImage(data.landonCarter);
   const laura = getImage(data.lauraGates);
+  const whitney = getImage(data.whitneyGlassberg);
   const ctaImage = getImage(data.ctaImage);
   return (
     <Layout>
@@ -120,7 +129,11 @@ export const Team = ({ data }: Props): JSX.Element => {
           <Row>
             <Column>
               <FlexColumn>
-                {joel && <GatsbyImage image={joel} alt='joel kimmel' />}
+                {joel && (
+                  <ImageContainer>
+                    <GatsbyImage image={joel} alt='joel kimmel' />
+                  </ImageContainer>
+                )}
                 <FlexSpace>
                   <div>
                     <Name>Joel Kimmel</Name>
@@ -134,7 +147,11 @@ export const Team = ({ data }: Props): JSX.Element => {
             </Column>
             <Column>
               <FlexColumn>
-                {judy && <GatsbyImage image={judy} alt='judy kimmel' />}
+                {judy && (
+                  <ImageContainer>
+                    <GatsbyImage image={judy} alt='judy kimmel' />
+                  </ImageContainer>
+                )}
                 <FlexSpace>
                   <div>
                     <Name>Judy Addicott Kimmel</Name>
@@ -148,7 +165,11 @@ export const Team = ({ data }: Props): JSX.Element => {
             </Column>
             <Column>
               <FlexColumn>
-                {angela && <GatsbyImage image={angela} alt='angela beissel' />}
+                {angela && (
+                  <ImageContainer>
+                    <GatsbyImage image={angela} alt='angela beissel' />
+                  </ImageContainer>
+                )}
                 <FlexSpace>
                   <div>
                     <Name>Angela Beissel</Name>
@@ -163,7 +184,11 @@ export const Team = ({ data }: Props): JSX.Element => {
           <Row>
             <Column>
               <FlexColumn>
-                {char && <GatsbyImage image={char} alt='charlene wilson' />}
+                {char && (
+                  <ImageContainer>
+                    <GatsbyImage image={char} alt='charlene wilson' />
+                  </ImageContainer>
+                )}
                 <FlexSpace>
                   <div>
                     <Name>Charlene Wilson</Name>
@@ -177,7 +202,11 @@ export const Team = ({ data }: Props): JSX.Element => {
             </Column>
             <Column>
               <FlexColumn>
-                {amy && <GatsbyImage image={amy} alt='amy castoro' />}
+                {amy && (
+                  <ImageContainer>
+                    <GatsbyImage image={amy} alt='amy castoro' />
+                  </ImageContainer>
+                )}
                 <FlexSpace>
                   <div>
                     <Name>Amy Castoro</Name>
@@ -191,7 +220,11 @@ export const Team = ({ data }: Props): JSX.Element => {
             </Column>
             <Column>
               <FlexColumn>
-                {phil && <GatsbyImage image={phil} alt='phil hallstein' />}
+                {phil && (
+                  <ImageContainer>
+                    <GatsbyImage image={phil} alt='phil hallstein' />
+                  </ImageContainer>
+                )}
                 <FlexSpace>
                   <div>
                     <Name>Phil Hallstein</Name>
@@ -206,20 +239,11 @@ export const Team = ({ data }: Props): JSX.Element => {
           <Row>
             <Column>
               <FlexColumn>
-                {linda && <GatsbyImage image={linda} alt='linda curtis' />}
-                <FlexSpace>
-                  <div>
-                    <Name>Linda Curtis</Name>
-                  </div>
-                  <ButtonContainer>
-                    <Button to='/team/linda-curtis'>Meet Linda</Button>
-                  </ButtonContainer>
-                </FlexSpace>
-              </FlexColumn>
-            </Column>
-            <Column>
-              <FlexColumn>
-                {landon && <GatsbyImage image={landon} alt='landon carter' />}
+                {landon && (
+                  <ImageContainer>
+                    <GatsbyImage image={landon} alt='landon carter' />
+                  </ImageContainer>
+                )}
                 <FlexSpace>
                   <div>
                     <Name>Landon Carter</Name>
@@ -232,7 +256,47 @@ export const Team = ({ data }: Props): JSX.Element => {
             </Column>
             <Column>
               <FlexColumn>
-                {laura && <GatsbyImage image={laura} alt='laura gates' />}
+                {linda && (
+                  <ImageContainer>
+                    <GatsbyImage image={linda} alt='linda curtis' />
+                  </ImageContainer>
+                )}
+                <FlexSpace>
+                  <div>
+                    <Name>Linda Curtis</Name>
+                  </div>
+                  <ButtonContainer>
+                    <Button to='/team/linda-curtis'>Meet Linda</Button>
+                  </ButtonContainer>
+                </FlexSpace>
+              </FlexColumn>
+            </Column>
+            <Column>
+              <FlexColumn>
+                {whitney && (
+                  <ImageContainer>
+                    <GatsbyImage image={whitney} alt='whitney glassberg' />
+                  </ImageContainer>
+                )}
+                <FlexSpace>
+                  <div>
+                    <Name>Whitney Glassberg</Name>
+                  </div>
+                  <ButtonContainer>
+                    <Button to='/team/whitney-glassberg'>Meet Whitney</Button>
+                  </ButtonContainer>
+                </FlexSpace>
+              </FlexColumn>
+            </Column>
+          </Row>
+          <Row>
+            <Column>
+              <FlexColumn>
+                {laura && (
+                  <ImageContainer>
+                    <GatsbyImage image={laura} alt='laura gates' />
+                  </ImageContainer>
+                )}
                 <FlexSpace>
                   <div>
                     <Name>Laura Gates</Name>
@@ -244,6 +308,8 @@ export const Team = ({ data }: Props): JSX.Element => {
                 </FlexSpace>
               </FlexColumn>
             </Column>
+            <Column />
+            <Column />
           </Row>
         </Container>
       </Section>
@@ -285,13 +351,19 @@ export const pageQuery = graphql`
     philHallstein: file(relativePath: { eq: "phil-hallstein.jpg" }) {
       ...fluidImage
     }
+    lauraGates: file(relativePath: { eq: "laura-gates.jpg" }) {
+      ...fluidImage
+    }
     lindaCurtis: file(relativePath: { eq: "linda-curtis.jpg" }) {
       ...fluidImage
     }
     landonCarter: file(relativePath: { eq: "landon-carter.jpg" }) {
       ...fluidImage
     }
-    lauraGates: file(relativePath: { eq: "laura-gates.jpg" }) {
+    whitneyGlassberg: file(relativePath: { eq: "whitney-glassberg.jpg" }) {
+      ...fluidImage
+    }
+    lindaCurtis: file(relativePath: { eq: "linda-curtis.jpg" }) {
       ...fluidImage
     }
     ctaImage: file(relativePath: { eq: "values-cta-image.jpg" }) {

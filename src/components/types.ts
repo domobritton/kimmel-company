@@ -1,4 +1,4 @@
-import { IGatsbyImageData } from "gatsby-plugin-image";
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 export interface TeamImageData {
   teamHero?: IGatsbyImageData;
@@ -11,5 +11,6 @@ export interface TeamImageData {
   lindaCurtis?: IGatsbyImageData;
   landonCarter?: IGatsbyImageData;
   lauraGates?: IGatsbyImageData;
+  whitneyGlassberg?: IGatsbyImageData;
   ctaImage?: IGatsbyImageData;
 }
